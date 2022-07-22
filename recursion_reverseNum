@@ -1,0 +1,15 @@
+let sum=0;
+
+function reverseNum(n){
+  if(n==0){
+    return;
+  }
+
+  let r=n%10;
+  sum=sum*10+r;
+  reverseNum(Math.floor(n/10));
+
+}
+
+reverseNum(8796);
+console.log(sum);
