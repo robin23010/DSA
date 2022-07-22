@@ -1,3 +1,6 @@
+
+// reverse number using external variable
+
 let sum=0;
 
 function reverseNum(n){
@@ -13,3 +16,21 @@ function reverseNum(n){
 
 reverseNum(8796);
 console.log(sum);
+
+// reverse using helper function
+
+function reverseNum(n){
+
+if(n<10){
+  return n
+}
+let base = Math.floor(Math.log10(n));
+  return helper(n,base) + reverseNum(Math.floor(n/10));
+
+}
+
+function helper(n,base10){
+  return (n%10) *  Math.pow(10,base10);
+};
+
+reverseNum(8796);
