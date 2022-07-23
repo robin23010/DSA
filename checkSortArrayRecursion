@@ -1,0 +1,16 @@
+function sortArray(arr){
+
+  return helper(arr,0);
+
+}
+
+
+function helper(arr,n){
+  if(n==arr.length-1){
+    return true;
+  }
+  return arr[n]<arr[n+1] && helper(arr,n+1);
+}
+
+var a=[1,2,5,6,89,99];
+sortArray(a)
