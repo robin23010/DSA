@@ -1,0 +1,18 @@
+function getElementIndexArray(arr,n){
+  return helper(arr,n,0);
+}
+function helper(arr,n,i){
+  
+   let list=[];
+  if(i==arr.length){
+    return list;
+  }
+  if(arr[i]==n){
+    list.push(i);
+  }
+    return list.concat(helper(arr,n,i+1));
+  }
+
+
+var a=[1,2,5,5,6,7,7,99];
+getElementIndexArray(a,5)
