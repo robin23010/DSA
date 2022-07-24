@@ -13,3 +13,25 @@ function printStra(n){
   console.log(str)
   printStra(n-1);
 }
+
+
+
+<--------------- triangle --------------------->
+
+
+
+function help(n,j){
+  if(j>n){
+    return
+  }
+  let str=''
+  let i=0;
+  while(i<j){
+    i=i+1;
+    str=str+'*';
+  }
+    console.log(str)
+  help(n,j+1);
+}
+
+printStra(5)
