@@ -1,0 +1,32 @@
+function selectionSort(arr){
+  return helper(arr,arr.length-1);
+}
+
+function helper(arr,r){
+    if(r<0){
+      return arr;
+    }
+
+    let maxIndex=findMaxIndex(arr,r,0,0);
+    let temp = arr[r];
+    arr[r]=arr[maxIndex];
+    arr[maxIndex] = temp;
+    return helper(arr,r-1);
+}
+
+
+function findMaxIndex(arr,r,maxIndex,i){
+
+  if(i>r){
+    return maxIndex;
+  }
+
+  if(arr[i]>arr[maxIndex]){
+    maxIndex= i;
+  }
+  return findMaxIndex(arr, r,maxIndex,++i);
+
+}
+
+var a=[9,4,7,3];
+selectionSort(a);
