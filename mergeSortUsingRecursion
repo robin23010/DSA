@@ -1,0 +1,36 @@
+function mergeSort(arr){
+
+    if(arr.length==1){
+      return arr;
+    }
+
+    let a =  arr.length%2==0 ? arr.slice(0,arr.length/2) : arr.slice(0,(arr.length+1)/2);
+    let b =  arr.length%2==0 ? arr.slice((arr.length/2)) : arr.slice(((arr.length+1)/2));
+    a = mergeSort(a);
+    b = mergeSort(b);
+    let c = merge(a,b,0,0,[]);
+    return c;
+}
+
+function merge(arr1, arr2, i, j, arr) {
+  
+  if (i >= arr1.length) {
+  arr =  arr.concat(arr2.slice(j));
+    return arr;
+  } else if (j >= arr2.length) {
+   arr= arr.concat(arr1.slice(i));
+    return arr;
+  }
+
+  if (arr1[i] > arr2[j]) {
+    arr.push(arr2[j]);
+   return merge(arr1, arr2, i, j + 1, arr);
+  } else {
+    arr.push(arr1[i]);
+   return merge(arr1, arr2, i + 1, j, arr);
+  }
+}
+
+
+var a2=[9,4,7,3];
+mergeSort(a2)
