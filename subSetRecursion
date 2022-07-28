@@ -1,0 +1,15 @@
+function subSet(str){
+   return helper('',str, []);
+}
+
+function helper(pStr,uStr,arr){
+  debugger;
+      if(!uStr){
+        arr.push(pStr)
+        return arr;
+      }
+       pStr + helper(pStr+uStr[0], uStr.slice(1), arr);
+       pStr + helper(pStr, uStr.slice(1), arr);
+       return arr;
+}
+subSet('abc')
