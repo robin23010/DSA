@@ -13,3 +13,22 @@ function helper(pStr,uStr,arr){
        return arr;
 }
 subSet('abc')
+
+
+--- choosing local array --
+function subSet(str){
+   return helper('',str);
+}
+
+function helper(pStr,uStr){
+      if(!uStr){
+        let arr = [];
+        arr.push(pStr)
+        return arr;
+      }
+       let l = helper(pStr+uStr[0], uStr.slice(1));
+       let r =  helper(pStr, uStr.slice(1));
+       return l.concat(r);
+
+}
+subSet('abc')
