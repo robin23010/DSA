@@ -1,0 +1,17 @@
+function skipString(str, skipStr){
+  
+    if(!str && !str.length){
+        return '';
+    }
+
+    if(str[0] !=skipStr){
+      return str[0] + skipString(str.slice(1),skipStr);
+    }else{
+      return skipString(str.slice(1),skipStr);
+    }
+};
+
+
+var a='abadhtchgc vhvj h';
+skipString(a,'a');
+
