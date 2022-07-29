@@ -15,3 +15,24 @@ function permutationString(pStr,uStr,ans){
 }
 
 permutation('',"abc",[])
+
+
+
+------ count of answer --------------
+function permutationString(pStr,uStr){
+  
+    if(!uStr){
+     return 1;
+    }
+    let ans2=0;
+    let ch = uStr[0];
+    let pStrLength = pStr.length;
+    for(let i=0;i<=pStrLength;i++){
+        let intialStr = pStr.substring(0,i);
+        let finalStr = pStr.substring(i);
+        ans2=ans2 + permutationString(intialStr + ch + finalStr, uStr.slice(1));
+    }
+    return ans2;
+}
+
+permutationString('',"abc4")
