@@ -1,0 +1,17 @@
+function permutationString(pStr,uStr,ans){
+    if(!uStr){
+      return ans.push(pStr);
+    }
+
+    let ch = uStr[0];
+    let pStrLength = pStr.length;
+    for(let i=0;i<=pStrLength;i++){
+        let intialStr = pStr.substring(0,i);
+        let finalStr = pStr.substring(i);
+         permutation(intialStr + ch + finalStr, uStr.slice(1),ans);
+    }
+   
+    return ans;
+}
+
+permutation('',"abc",[])
