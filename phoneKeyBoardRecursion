@@ -12,3 +12,25 @@ function phoneTyping(p,up){
 }
 
 phoneTyping('','97')
+
+
+
+// with data return in list
+function phoneTyping(p,up){
+  if(!up.length){
+    let a = [];
+     a.push(p);
+     return a;
+  }
+  let arr  = [];
+  let digit = up.charCodeAt()-48;
+  for(let i=(digit-1)*3; i<digit*3;i++ ){
+    let ch = String.fromCharCode(65+i)
+    let res = phoneTyping(p+ch, up.substr(1));
+    arr.push(...res)
+  }
+
+  return arr;
+}
+
+phoneTyping('','12')
