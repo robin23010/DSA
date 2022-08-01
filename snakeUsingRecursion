@@ -1,0 +1,53 @@
+
+// when you move only right and downward
+
+function countPath(p,c,r){
+      if(c==1 && r==1){
+        return [p];
+      }
+
+let a=[];
+      if(c>1){
+          a.push(...countPath(p+'D',c-1,r));
+      }
+      
+      if(r>1){
+        a.push(...countPath(p+'R',c,r-1));
+      }
+   
+     
+      
+      return a;
+}
+
+let r=countPath('',3,3);
+console.log(r);
+
+
+
+// when you can move vertical, horizontal and diagonal
+function countPath(p,c,r){
+      if(c==1 && r==1){
+        return [p];
+      }
+
+let a=[];
+
+if(c>1 && r>1 ){
+     a.push(...countPath(p+'D',c-1,r-1));
+}
+      if(c>1){
+          a.push(...countPath(p+'V',c-1,r));
+      }
+      
+      if(r>1){
+        a.push(...countPath(p+'H',c,r-1));
+      }
+   
+     
+      
+      return a;
+}
+
+let r=countPath('',3,3);
+console.log(r);
