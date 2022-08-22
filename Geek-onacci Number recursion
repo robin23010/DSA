@@ -1,0 +1,24 @@
+function main(t,arr){
+let p=[];
+		for(let i=0;i<t;i++){
+    p.push(helper(arr[i]));
+    }
+    
+    return p;
+}
+
+
+function helper(arr){
+
+  if(arr[arr.length-1]===arr.length-1){
+    return arr[arr.length-2];
+  }
+      let n = arr.pop();
+      let newNum = arr[arr.length-3]+ arr[arr.length-2] + arr[arr.length-1];
+      arr.push(newNum);
+      arr.push(n);
+    return helper(arr);
+}
+
+var arr3 = [[1, 3, 2, 4],[1, 3, 2, 5],[1,3,2,6]]
+main(3,arr3);
